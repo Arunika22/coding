@@ -6,14 +6,18 @@ vector<string> solve(vector<string>&st,int n){
     stringstream ss(it);
     int a, b, c;
      ss>>a>>b>>c;
+  
     if((a+b < c) || (b+c < a) || (c+a < b)){
+           cout<<a<<b<<c<<endl;
         result.push_back("Invalid");
-    }
-    if((a ==b )|| (b ==c)||(a == c)){
-        result.push_back("Isoceles");
+        continue;
     }
     if(a==b && b == c){
         result.push_back("Equilateral");
+    }else if((a ==b )|| (b ==c)||(a == c)){
+        result.push_back("Isoceles");
+    }else{
+        result.push_back("Not one of these");
     }
   }
   return result;
